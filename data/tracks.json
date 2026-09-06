@@ -1,0 +1,25 @@
+[
+  {
+    "id": "BEAT-0003",
+    "title": "Specific sound",
+    "slug": "specific-sound",
+    "current_version": 1,
+    "bpm": null,
+    "key": "",
+    "duration": "00:59",
+    "published": "2026-09-06",
+    "updated": "2026-09-06",
+    "registry": "001",
+    "source": "suno",
+    "preview": "assets/audio/BEAT-0003-v001-specific-sound-preview.mp3",
+    "stems": "assets/audio/BEAT-0003-v001-specific-sound-stems.zip",
+    "full_mix": null,
+    "lyrics_id": "LYR-0001",
+    "cc0_item_id": "BEAT-0003",
+    "cover": "assets/images/site-artwork.jpg",
+    "license": "CC0",
+    "suno_generated": true,
+    "origin_note": "Аудіо згенеровано за допомогою Suno.",
+    "description": "Specific sound — музичний трек, опублікований під CC0 1.0 Universal."
+  }
+]

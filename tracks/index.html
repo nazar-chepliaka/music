@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Усі треки | CC0 Music Archive</title>
+    <meta name="description" content="Повний архів треків із прослуховуванням, завантаженням і сторінками релізів.">
+    <meta property="og:title" content="Усі треки | CC0 Music Archive">
+    <meta property="og:description" content="Слухай і завантажуй треки, опубліковані під CC0.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body data-page="tracks" data-base-path="../" data-tracks-url="../data/tracks.json" data-registry-url="../data/cc0-registry.json">
+    <a class="skip-link" href="#main">До вмісту</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Головна навігація">
+        <a class="brand" href="../index.html">CC0 Music Archive</a>
+        <div class="nav-links">
+          <a href="../index.html#tracks">ТРЕКИ</a>
+          <a href="../license.html">ЛІЦЕНЗІЯ</a>
+          <a href="../verify.html">ПЕРЕВІРКА</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../about.html">ПРО ПРОЄКТ</a>
+        </div>
+        <p class="nav-note">БЕЗКОШТОВНА МУЗИКА<br>ДЛЯ ВСІХ</p>
+      </nav>
+    </header>
+
+    <main id="main" class="site-main">
+      <section class="page-heading">
+        <p class="eyebrow">АРХІВ РЕЛІЗІВ</p>
+        <h1>Усі треки.</h1>
+        <p data-catalog-copy>Обери трек, слухай прямо на сторінці або відкрий сторінку треку з описом, ліцензією, завантаженням і технічною інформацією.</p>
+      </section>
+
+      <section class="catalog" aria-labelledby="catalog-title" data-catalog-view>
+        <div class="section-title">
+          <h2 id="catalog-title">УСІ ТРЕКИ</h2>
+          <a href="../license.html">ЛІЦЕНЗІЯ →</a>
+        </div>
+        <div class="track-list" data-track-list></div>
+        <p class="load-state" data-load-state>Завантаження треків...</p>
+      </section>
+
+      <article class="track-page hidden" data-track-detail></article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 · МУЗИКА ДЛЯ ВСІХ</p>
+      <div class="footer-links">
+        <a href="https://github.com/" rel="noopener">GITHUB</a>
+        <a href="../license.html">ЛІЦЕНЗІЯ</a>
+      </div>
+    </footer>
+  </body>
+</html>

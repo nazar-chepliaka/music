@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CC0 Music Archive | Треки</title>
+    <meta name="description" content="Слухай і завантажуй готові музичні треки, опубліковані під вільною ліцензією.">
+    <meta property="og:title" content="CC0 Music Archive | Треки">
+    <meta property="og:description" content="Незалежний архів музичних релізів, опублікованих під CC0 1.0 Universal.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body data-page="home" data-base-path="" data-tracks-url="data/tracks.json" data-registry-url="data/cc0-registry.json">
+    <a class="skip-link" href="#main">До вмісту</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Головна навігація">
+        <a class="brand" href="index.html">CC0 Music Archive</a>
+        <div class="nav-links">
+          <a href="#tracks">ТРЕКИ</a>
+          <a href="license.html">ЛІЦЕНЗІЯ</a>
+          <a href="verify.html">ПЕРЕВІРКА</a>
+          <a href="faq.html">FAQ</a>
+          <a href="about.html">ПРО ПРОЄКТ</a>
+        </div>
+        <p class="nav-note">БЕЗКОШТОВНА МУЗИКА<br>ДЛЯ ВСІХ</p>
+      </nav>
+    </header>
+
+    <main id="main" class="site-main">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">НЕЗАЛЕЖНИЙ АРХІВ РЕЛІЗІВ</p>
+          <h1>ТРЕКИ ДЛЯ<br>ВІЛЬНОГО ВИКОРИСТАННЯ</h1>
+          <p>Слухай готові треки.<br>Завантажуй для особистих і комерційних проєктів.<br>Без обов’язкової згадки автора.</p>
+          <div class="hero-actions">
+            <a class="text-button primary-link" href="#tracks">СЛУХАТИ ТРЕКИ →</a>
+            <a class="text-button" href="about.html">ДЕТАЛЬНІШЕ</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="assets/images/site-artwork.jpg" alt="Графіті-арт для візуальної айдентики сайту">
+          <p>ТА САМА МУЗИКА.<br>РІЗНІ ІСТОРІЇ.</p>
+        </div>
+      </section>
+
+      <section id="tracks" class="catalog" aria-labelledby="catalog-title">
+        <div class="section-title">
+          <h2 id="catalog-title">ОСТАННІ ТРЕКИ</h2>
+          <a href="tracks/">УСІ ТРЕКИ →</a>
+        </div>
+        <div class="track-list" data-track-list data-limit="6"></div>
+        <p class="load-state" data-load-state>Завантаження треків...</p>
+      </section>
+
+      <section class="info-strip" aria-label="Коротко про ліцензію і походження">
+        <div>
+          <h2>УСІ ТРЕКИ ОПУБЛІКОВАНІ<br>ПІД CC0 1.0 UNIVERSAL.</h2>
+          <p>Використовуй, змінюй,<br>семплуй і монетизуй.</p>
+        </div>
+        <div>
+          <h2>ПОХОДЖЕННЯ МУЗИКИ<br>ВКАЗАНЕ НА СТОРІНЦІ ТРЕКУ.</h2>
+          <p>Інструментали можуть містити<br>матеріал, створений із Suno.</p>
+        </div>
+        <div>
+          <h2>СТВОРИ<br>ЩОСЬ<br>СВОЄ.</h2>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 · МУЗИКА ДЛЯ ВСІХ</p>
+      <div class="footer-links">
+        <a href="https://github.com/" rel="noopener">GITHUB</a>
+        <a href="license.html">ЛІЦЕНЗІЯ</a>
+      </div>
+    </footer>
+  </body>
+</html>

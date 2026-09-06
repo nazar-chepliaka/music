@@ -1,0 +1,63 @@
+CC0 REGISTRY
+============
+
+Registry:
+Date:
+
+Declaration:
+Creative Commons CC0 1.0 Universal
+
+This registry identifies materials released under CC0
+to the extent the publisher is legally entitled to
+waive or license the relevant rights.
+
+ITEMS
+-----
+
+ID:
+Title:
+Type:
+Origin:
+Current version:
+License:
+CC0 1.0 Universal, to the extent the publisher is legally entitled to waive or license the relevant rights.
+
+VERSION
+-------
+
+Version:
+Release date:
+Version note:
+
+FILES
+-----
+
+PREVIEW MP3
+
+Path:
+Role: preview
+Format: MP3
+SHA-256:
+
+STEMS ZIP
+
+Path:
+Role: source_package
+Format: STEMS
+Container: ZIP
+SHA-256:
+Scope:
+The files inside this published archive are part of the same CC0 release to the extent the publisher is legally entitled to apply CC0.
+
+ARCHIVE CONTENTS
+----------------
+
+List regular files only. Sort deterministically.
+
+File:
+Format:
+SHA-256:
+
+File:
+Format:
+SHA-256:

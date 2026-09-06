@@ -1,0 +1,126 @@
+[
+  {
+    "registry": "001",
+    "release_date": "2026-09-06",
+    "declaration_status": "Чернетка / очікує юридичного оформлення",
+    "declaration_url": "declaration.html",
+    "items": [
+      {
+        "id": "BEAT-0003",
+        "title": "Specific sound",
+        "type": "suno_generated_audio",
+        "origin_label": "AI-generated with Suno",
+        "public_url": "tracks/?id=specific-sound",
+        "current_version": 1,
+        "versions": [
+          {
+            "version": 1,
+            "release_date": "2026-09-06",
+            "note": null,
+            "files": [
+              {
+                "format": "MP3",
+                "role": "preview",
+                "path": "assets/audio/BEAT-0003-v001-specific-sound-preview.mp3",
+                "sha256": "490abe36494a124162592e77d96dcdfe6a4d62b37c4502465e52ccfabfe4ae26"
+              },
+              {
+                "format": "STEMS",
+                "container": "ZIP",
+                "role": "source_package",
+                "description": "Окремі доріжки / stems. Вміст архіву належить до цього самого CC0-релізу настільки, наскільки видавець має право застосувати CC0.",
+                "path": "assets/audio/BEAT-0003-v001-specific-sound-stems.zip",
+                "sha256": "462a930453341cffaf98eaa53ac3d62553a17d8284308a86875b8824f20befe4",
+                "contents": [
+                  {
+                    "file": "Голос 260825_144853 (Backing Vocals).wav",
+                    "sha256": "e05f8f082a3b8098c62031879896ef39d4b07c92c78a1defd37d649d49ea8f5e",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Bass).wav",
+                    "sha256": "fb76b0ffe239b65f2cd3c67aebbada5a1a4f9d55e46b44cfaccfc45341c289af",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Brass).wav",
+                    "sha256": "8001f7a1d1d23c791c2aa6735929b2984b175e45727a919e6859c9c626b7ae9d",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Drums).wav",
+                    "sha256": "3f67a003f55b718df945eefda6233a11872d6c14a87d00d03792213ff8b14677",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (FX).wav",
+                    "sha256": "c147ac7871eee30d4d4344bcb2b6c019707d255e19218ac76de4f14d2ffa756b",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Guitar).wav",
+                    "sha256": "fcb1a66668dbc49ec198cebc2cfdf5ae453201a3ececda2b979e1aa6c77578e4",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Keyboard).wav",
+                    "sha256": "88a1c01ef7b2eeb397d29f3dbd1fcb947def14a5abbb002d77cd3eb07fa5c133",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Percussion).wav",
+                    "sha256": "40f2dbee15b3f65bb278b2a23a4be86890371ec6ce16da2135e134ecee039546",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Strings).wav",
+                    "sha256": "e42ca28d9f21ef273abf94bd9f595a3b104574ae1ae5076bfc4d63387660b53a",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Synth).wav",
+                    "sha256": "6d8a536f706794b97beb0534ed8e4d4ea7ebc8321c87131fdba25cc54dcc4b49",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Vocals).wav",
+                    "sha256": "0ee39d84cdff6c8c471229baabef2d7002b3948df27d97063f4b82e966a20b1b",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "Голос 260825_144853 (Woodwinds).wav",
+                    "sha256": "f331f42e6b10df117ec4732f1168a13d6804a2841d673fd4fe6726bdf0ee863e",
+                    "format": "WAV"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LYR-0001",
+        "title": "Specific sound",
+        "type": "original_lyrics",
+        "origin_label": "Оригінальний текст",
+        "author_declaration": "Заявлено як створений видавцем проєкту",
+        "public_url": "",
+        "current_version": 1,
+        "versions": [
+          {
+            "version": 1,
+            "release_date": "2026-09-06",
+            "note": null,
+            "files": [
+              {
+                "format": "TXT",
+                "path": "assets/lyrics/LYR-0001-specific-sound.txt",
+                "sha256": "2ae65d54ad0859f1fb68e28ad4655853caa6f76531f36f2b091bfc3912d1d375"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

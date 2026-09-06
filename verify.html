@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Перевірка CC0 | CC0 Music Archive</title>
+    <meta name="description" content="Публічна перевірка CC0 ID, реєстрів, походження матеріалів і SHA-256 для опублікованих файлів.">
+    <meta property="og:title" content="Перевірка CC0 | CC0 Music Archive">
+    <meta property="og:description" content="Кожен CC0-матеріал має стабільний ID, запис у реєстрі та SHA-256 для перевірки файлів.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body data-page="verify" data-base-path="" data-registry-url="data/cc0-registry.json">
+    <a class="skip-link" href="#main">До вмісту</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Головна навігація">
+        <a class="brand" href="index.html">CC0 Music Archive</a>
+        <div class="nav-links">
+          <a href="index.html#tracks">ТРЕКИ</a>
+          <a href="license.html">ЛІЦЕНЗІЯ</a>
+          <a href="verify.html">ПЕРЕВІРКА</a>
+          <a href="faq.html">FAQ</a>
+          <a href="about.html">ПРО ПРОЄКТ</a>
+        </div>
+        <p class="nav-note">БЕЗКОШТОВНА МУЗИКА<br>ДЛЯ ВСІХ</p>
+      </nav>
+    </header>
+
+    <main id="main" class="site-main">
+      <section class="page-heading">
+        <p class="eyebrow">ПЕРЕВІРКА CC0</p>
+        <h1>Публічний реєстр матеріалів.</h1>
+        <p>Кожен матеріал у цьому проєкті, опублікований під CC0, має унікальний ID та може бути пов’язаний із конкретним записом у реєстрі CC0.</p>
+        <p>Для файлів публікується SHA-256, що дозволяє перевірити, що завантажений файл є саме тією версією, яка була включена до CC0.</p>
+      </section>
+
+      <section class="verification-grid" aria-label="Модель перевірки">
+        <div>
+          <h2>Хто?</h2>
+          <p>Видавець робить окрему декларацію про застосування CC0.</p>
+        </div>
+        <div>
+          <h2>Що?</h2>
+          <p>Кожен матеріал має стабільний ID та запис у реєстрі.</p>
+        </div>
+        <div>
+          <h2>Який саме файл?</h2>
+          <p>Файл ідентифікується SHA-256.</p>
+        </div>
+        <div>
+          <h2>Яке походження?</h2>
+          <p>Для текстів і музики походження вказується окремо.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-title">
+          <h2>РЕЄСТРИ CC0</h2>
+          <a href="declaration.html">ДЕКЛАРАЦІЯ →</a>
+        </div>
+        <div class="registry-list" data-registry-list></div>
+        <p class="load-state" data-load-state>Завантаження реєстру...</p>
+      </section>
+
+      <section class="content-section notice">
+        <h2>Статус декларації</h2>
+        <p>Формальна декларація та спосіб її підписання будуть опубліковані після юридичного оформлення.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 · МУЗИКА ДЛЯ ВСІХ</p>
+      <div class="footer-links">
+        <a href="https://github.com/" rel="noopener">GITHUB</a>
+        <a href="license.html">ЛІЦЕНЗІЯ</a>
+        <a href="verify.html">ПЕРЕВІРКА</a>
+      </div>
+    </footer>
+  </body>
+</html>
