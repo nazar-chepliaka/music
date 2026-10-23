@@ -21,5 +21,28 @@
     "suno_generated": true,
     "origin_note": "Аудіо згенеровано за допомогою Suno.",
     "description": "Specific sound — музичний трек, опублікований під CC0 1.0 Universal."
+  },
+  {
+    "id": "BEAT-0004",
+    "title": "Злам ролей",
+    "slug": "zlam-rolei",
+    "current_version": 1,
+    "bpm": 135,
+    "key": "",
+    "duration": "",
+    "published": "2026-10-23",
+    "updated": "2026-10-23",
+    "registry": "002",
+    "source": "suno",
+    "preview": "assets/audio/BEAT-0004-v001-zlam-rolei-preview.mp3",
+    "stems": "https://github.com/nazar-chepliaka/music/releases/download/BEAT-0004-v001/BEAT-0004-v001-zlam-rolei-stems.zip",
+    "full_mix": null,
+    "lyrics_id": null,
+    "cc0_item_id": "BEAT-0004",
+    "cover": "assets/images/site-artwork.jpg",
+    "license": "CC0",
+    "suno_generated": true,
+    "origin_note": "Аудіо згенеровано за допомогою Suno.",
+    "description": "Злам ролей — музичний трек, опублікований під CC0 1.0 Universal."
   }
 ]

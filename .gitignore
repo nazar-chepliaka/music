@@ -1,1 +1,5 @@
 .DS_Store
+
+# Large STEMS archives are distributed as GitHub Release assets.
+# track.sh adds one exact entry per archive over GitHub's 100 MiB Git limit.
+/assets/audio/BEAT-0004-v001-zlam-rolei-stems.zip

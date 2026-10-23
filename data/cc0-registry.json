@@ -122,5 +122,111 @@
         ]
       }
     ]
+  },
+  {
+    "registry": "002",
+    "release_date": "2026-10-23",
+    "declaration_status": "Чернетка / очікує юридичного оформлення",
+    "declaration_url": "declaration.html",
+    "items": [
+      {
+        "id": "BEAT-0004",
+        "title": "Злам ролей",
+        "type": "suno_generated_audio",
+        "origin_label": "AI-generated with Suno",
+        "public_url": "tracks/?id=zlam-rolei",
+        "current_version": 1,
+        "versions": [
+          {
+            "version": 1,
+            "release_date": "2026-10-23",
+            "note": null,
+            "files": [
+              {
+                "format": "MP3",
+                "role": "preview",
+                "path": "assets/audio/BEAT-0004-v001-zlam-rolei-preview.mp3",
+                "sha256": "f48bf33d7e5a7b974d38f3f3637cafaaced92a3669b10fb355fd2a04bf40426a"
+              },
+              {
+                "format": "STEMS",
+                "container": "ZIP",
+                "role": "source_package",
+                "description": "Окремі доріжки / stems. Вміст архіву належить до цього самого CC0-релізу настільки, наскільки видавець має право застосувати CC0.",
+                "path": "https://github.com/nazar-chepliaka/music/releases/download/BEAT-0004-v001/BEAT-0004-v001-zlam-rolei-stems.zip",
+                "sha256": "eb619a045b955788a4971ffa737d52e1b83bf18e918edc7e4696131a1f1e98b0",
+                "contents": [
+                  {
+                    "file": "0 Злам ролей.wav",
+                    "sha256": "55b6dba45ff7a996c4c7114bcc9da6fe200f25ed958db4081fd5e1acc6908904",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "1 Woodwinds.wav",
+                    "sha256": "e09ef7ebddc5e49e4a419ef8c71cc2605884add8bf8c1e4c03d86caa80a8831e",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "10 Drums.wav",
+                    "sha256": "b14f9a0b7a5c1fe84026bff93646b7ef444f1cdd9707dfa50b0b08243b232edd",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "11 Backing_Vocals.wav",
+                    "sha256": "de5d022187e6531a66fa190d58e4a815a903c5c78b7b0b645cb1dd0dff41145f",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "12 Vocals.wav",
+                    "sha256": "0ca7f77a672740559f78724a8ac4a077dbf6703bf9908bd0551ec9a1f098347b",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "2 Brass.wav",
+                    "sha256": "33f7cbca4b0e14d2ebc026453cee64eff6ead73386a83b2ef95afbc0a5dc8a6b",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "3 FX.wav",
+                    "sha256": "a503b8c041691347a8ed8b9a079d3c96208ac87d0e796eb0cfe95478167dfaaa",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "4 Synth.wav",
+                    "sha256": "8b5a8a1dae9bdbab40b67fe6357df940d79120c993b8737b4376762b9620e50d",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "5 Strings.wav",
+                    "sha256": "a4ae7c08042c3fa35c2d89094f2c3f0af7aa7a0cf2c007a071176229aa34c431",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "6 Percussion.wav",
+                    "sha256": "682593f9eb4f14153fe018b43612e1c1eca7eb458f2f5fcd9d85dafb17152577",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "7 Keyboard.wav",
+                    "sha256": "2138833b4e665a6ac58b9c40b44781643c53d7a5bdc8801671881c651a6c7bf0",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "8 Guitar.wav",
+                    "sha256": "afdda9088dcab19cb5c45e9a1081165d9c30505bd471d1ecbdbee8bfa34bf975",
+                    "format": "WAV"
+                  },
+                  {
+                    "file": "9 Bass.wav",
+                    "sha256": "a89223144393631f0155f2d7e17eaa7b4e7ad4659f0083bde5e63e9ca75e6394",
+                    "format": "WAV"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]

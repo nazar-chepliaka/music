@@ -7,6 +7,9 @@ REGISTRY_JSON="$ROOT_DIR/data/cc0-registry.json"
 AUDIO_DIR="$ROOT_DIR/assets/audio"
 LYRICS_DIR="$ROOT_DIR/assets/lyrics"
 IMAGES_DIR="$ROOT_DIR/assets/images"
+GITIGNORE_FILE="$ROOT_DIR/.gitignore"
+GITHUB_REPOSITORY="${GITHUB_REPOSITORY:-nazar-chepliaka/music}"
+GITHUB_GIT_FILE_LIMIT=$((100 * 1024 * 1024))
 
 created_files=()
 tmp_tracks=""
@@ -366,6 +369,44 @@ version_label() {
   printf 'v%03d' "$1"
 }
 
+file_size() {
+  wc -c < "$1" | tr -d '[:space:]'
+}
+
+release_asset_url() {
+  local track_id="$1"
+  local version_tag="$2"
+  local filename="$3"
+  printf 'https://github.com/%s/releases/download/%s-%s/%s' \
+    "$GITHUB_REPOSITORY" "$track_id" "$version_tag" "$filename"
+}
+
+ignore_large_archive() {
+  local relative_path="$1"
+  local entry="/$relative_path"
+
+  touch "$GITIGNORE_FILE"
+  if ! grep -Fqx "$entry" "$GITIGNORE_FILE"; then
+    printf '\n# GitHub Release asset (over 100 MiB)\n%s\n' "$entry" >> "$GITIGNORE_FILE"
+  fi
+}
+
+stems_publish_path() {
+  local archive="$1"
+  local relative_path="$2"
+  local track_id="$3"
+  local version_tag="$4"
+  local size
+  size="$(file_size "$archive")"
+
+  if (( size > GITHUB_GIT_FILE_LIMIT )); then
+    ignore_large_archive "$relative_path"
+    release_asset_url "$track_id" "$version_tag" "${relative_path##*/}"
+  else
+    printf '%s' "$relative_path"
+  fi
+}
+
 print_archive_contents() {
   python3 - "$1" <<'PY'
 import json
@@ -523,16 +564,17 @@ run_add() {
   [[ -n "$lyrics_source" ]] && copy_new_file "$lyrics_source" "$lyrics_dest"
   [[ -n "$artwork_source" ]] && copy_new_file "$artwork_source" "$artwork_dest"
 
-  local preview_sha stems_sha lyrics_sha artwork_sha files_json payload
+  local preview_sha stems_sha stems_public_path lyrics_sha artwork_sha files_json payload
   preview_sha="$(sha256_file "$preview_dest")"
   stems_sha="$(sha256_file "$stems_dest")"
+  stems_public_path="$(stems_publish_path "$stems_dest" "$stems_dest_rel" "$track_id" "$version_tag")"
   lyrics_sha=""
   artwork_sha=""
   [[ -n "$lyrics_dest" ]] && lyrics_sha="$(sha256_file "$lyrics_dest")"
   [[ -n "$artwork_dest" ]] && artwork_sha="$(sha256_file "$artwork_dest")"
-  files_json="$(make_files_json "$preview_dest_rel" "$preview_sha" "$stems_dest_rel" "$stems_sha" "$stems_contents_json")"
+  files_json="$(make_files_json "$preview_dest_rel" "$preview_sha" "$stems_public_path" "$stems_sha" "$stems_contents_json")"
 
-  payload="$(python3 - "$track_id" "$slug" "$registry_number" "$title" "$bpm" "$key" "$duration" "$published" "$preview_dest_rel" "$stems_dest_rel" "$lyrics_id" "$lyrics_dest_rel" "$lyrics_sha" "$image_id" "$artwork_dest_rel" "$artwork_sha" "$files_json" <<'PY'
+  payload="$(python3 - "$track_id" "$slug" "$registry_number" "$title" "$bpm" "$key" "$duration" "$published" "$preview_dest_rel" "$stems_public_path" "$lyrics_id" "$lyrics_dest_rel" "$lyrics_sha" "$image_id" "$artwork_dest_rel" "$artwork_sha" "$files_json" <<'PY'
 import json
 import sys
 
@@ -616,6 +658,10 @@ PY
   tmp_registry=""
 
   printf '\n✓ Track added: %s v001\n' "$track_id"
+  if [[ "$stems_public_path" == https://* ]]; then
+    printf '  Upload the ignored local archive to GitHub Release tag %s-%s:\n  %s\n' \
+      "$track_id" "$version_tag" "$stems_dest"
+  fi
 }
 
 run_update() {
@@ -673,12 +719,13 @@ run_update() {
   copy_new_file "$preview_source" "$preview_dest"
   copy_new_file "$stems_source" "$stems_dest"
 
-  local preview_sha stems_sha files_json payload
+  local preview_sha stems_sha stems_public_path files_json payload
   preview_sha="$(sha256_file "$preview_dest")"
   stems_sha="$(sha256_file "$stems_dest")"
-  files_json="$(make_files_json "$preview_dest_rel" "$preview_sha" "$stems_dest_rel" "$stems_sha" "$stems_contents_json")"
+  stems_public_path="$(stems_publish_path "$stems_dest" "$stems_dest_rel" "$track_id" "$version_tag")"
+  files_json="$(make_files_json "$preview_dest_rel" "$preview_sha" "$stems_public_path" "$stems_sha" "$stems_contents_json")"
 
-  payload="$(python3 - "$track_id" "$new_version" "$new_title" "$slug" "$bpm" "$key" "$duration" "$published" "$preview_dest_rel" "$stems_dest_rel" "$lyrics_id" "$files_json" "$version_note" <<'PY'
+  payload="$(python3 - "$track_id" "$new_version" "$new_title" "$slug" "$bpm" "$key" "$duration" "$published" "$preview_dest_rel" "$stems_public_path" "$lyrics_id" "$files_json" "$version_note" <<'PY'
 import json
 import sys
 
@@ -718,6 +765,10 @@ PY
   tmp_registry=""
 
   printf '\n✓ Track updated: %s %s\n' "$track_id" "$version_tag"
+  if [[ "$stems_public_path" == https://* ]]; then
+    printf '  Upload the ignored local archive to GitHub Release tag %s-%s:\n  %s\n' \
+      "$track_id" "$version_tag" "$stems_dest"
+  fi
 }
 
 run_migrate() {

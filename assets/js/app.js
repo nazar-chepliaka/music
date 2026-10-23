@@ -12,7 +12,9 @@
     return `${minutes}:${rest}`;
   };
 
-  const resolveAsset = (path) => `${state.basePath}${path}`;
+  const resolveAsset = (path) => /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(path)
+    ? path
+    : `${state.basePath}${path}`;
 
   const escapeHtml = (value = "") =>
     String(value).replace(/[&<>"']/g, (char) => ({

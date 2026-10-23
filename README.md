@@ -26,7 +26,8 @@
    - порахує SHA-256;
    - перевірить і захешує вміст ZIP;
    - оновить `data/tracks.json`;
-   - оновить `data/cc0-registry.json`.
+   - оновить `data/cc0-registry.json`;
+   - для STEMS ZIP понад 100 MiB сформує пряме посилання на GitHub Release і додасть точний локальний шлях до `.gitignore`.
 
 Окремий WAV-файл повного біта не є обов’язковим. Якщо потрібно поширювати готовий повний біт разом зі stems, його можна додати безпосередньо до ZIP-архіву.
 
@@ -95,7 +96,7 @@ python3 -m http.server 8000
   "registry": "001",
   "source": "suno",
   "preview": "assets/audio/BEAT-0007-v002-skelet-z-kistok-preview.mp3",
-  "stems": "assets/audio/BEAT-0007-v002-skelet-z-kistok-stems.zip",
+  "stems": "https://github.com/nazar-chepliaka/music/releases/download/BEAT-0007-v002/BEAT-0007-v002-skelet-z-kistok-stems.zip",
   "full_mix": null,
   "lyrics_id": "LYR-0004"
 }
@@ -136,7 +137,7 @@ python3 -m http.server 8000
           "container": "ZIP",
           "role": "source_package",
           "description": "Окремі доріжки / stems",
-          "path": "assets/audio/BEAT-0007-v002-skelet-z-kistok-stems.zip",
+          "path": "https://github.com/nazar-chepliaka/music/releases/download/BEAT-0007-v002/BEAT-0007-v002-skelet-z-kistok-stems.zip",
           "sha256": "",
           "contents": [
             {
@@ -211,9 +212,28 @@ assets/audio/BEAT-0007-v002-skelet-z-kistok-stems.zip
 
 ## Audio Files
 
-MP3 preview і STEMS ZIP зберігаються в `assets/audio/`, щоб GitHub Pages міг віддавати їх напряму.
+MP3 preview і STEMS ZIP до 100 MiB зберігаються в `assets/audio/`, щоб GitHub Pages міг віддавати їх напряму. Великі STEMS ZIP залишаються локально в тій самій директорії, але не потрапляють до Git: `track.sh` додає їхній точний шлях до `.gitignore`, а в JSON записує прямий URL GitHub Release.
 
-GitHub має обмеження на розмір репозиторіїв і файлів. Перед завантаженням великих архівів перевір актуальні ліміти GitHub Pages/GitHub.
+Для великого архіву тег релізу має формат `<BEAT-ID>-<version>`, наприклад `BEAT-0007-v002`, а назва asset має точно збігатися з локальним filename. Після запуску `track.sh` опублікуй файл через GitHub CLI:
+
+```sh
+gh auth login
+gh release create BEAT-0007-v002 \
+  assets/audio/BEAT-0007-v002-skelet-z-kistok-stems.zip \
+  --repo nazar-chepliaka/music \
+  --title "BEAT-0007 v002" \
+  --notes "STEMS source package for BEAT-0007 v002 (CC0)."
+```
+
+Перед commit/push перевір asset і його SHA-256:
+
+```sh
+gh release view BEAT-0007-v002 --repo nazar-chepliaka/music
+curl -fIL "https://github.com/nazar-chepliaka/music/releases/download/BEAT-0007-v002/BEAT-0007-v002-skelet-z-kistok-stems.zip"
+sha256sum assets/audio/BEAT-0007-v002-skelet-z-kistok-stems.zip
+```
+
+Опубліковані раніше невеликі ZIP і їхні GitHub Pages URL не змінюються. Не використовуй Git LFS для STEMS: GitHub Releases надає публічне безкоштовне завантаження без включення архіву в Git-історію.
 
 ## Licensing Wording
 
